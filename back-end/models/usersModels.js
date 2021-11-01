@@ -1,5 +1,15 @@
 const connection = require('./connection');
 
+const getByMail = async (email) => {
+  const emailFind = await connection()
+    .then((db) => db.collection('users')
+      .findOne({ email }));
+
+  if (emailFind) return true;
+
+  return false;
+};
+
 const create = async ({ name, email, password }) => {
   const { insertedId } = await connection()
     .then((db) => db.collection('users')
@@ -18,5 +28,6 @@ const create = async ({ name, email, password }) => {
 };
 
 module.exports = {
+  getByMail,
   create,
 };
