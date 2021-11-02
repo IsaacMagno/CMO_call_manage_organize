@@ -27,7 +27,16 @@ const create = async ({ name, email, password }) => {
   };
 };
 
+const getAllUsers = async () => {
+  const users = await connection()
+    .then((db) => db.collection('users')
+      .find().toArray());
+
+  return users;
+};
+
 module.exports = {
   getByMail,
   create,
+  getAllUsers,
 };
