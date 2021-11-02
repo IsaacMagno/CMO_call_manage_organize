@@ -1,10 +1,6 @@
 const Joi = require('joi');
 
 const schema = Joi.object({
-  username: Joi.string()
-    .max(30)
-    .min(3)
-    .required(),
   email: Joi.string()
     .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } })
     .required(),
@@ -13,6 +9,14 @@ const schema = Joi.object({
     .required(),
 });
 
+const registerSchema = Joi.object({
+  username: Joi.string()
+    .max(30)
+    .min(3)
+    .required(),
+});
+
 module.exports = {
   schema,
+  registerSchema,
 };

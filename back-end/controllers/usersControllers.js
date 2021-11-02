@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const usersServices = require('../models/usersModels');
+const usersServices = require('../services/usersServices');
 const {
   bodyValidation,
 } = require('../middlewares/usersMiddlewares');
@@ -17,7 +17,13 @@ router.post('/', bodyValidation, async (req, res) => {
 });
 
 router.get('/', async (_req, res) => {
-  res.send();
+  try {
+    const users = await usersServices.getAllUsers();
+
+    return res.status(200).json({ users });
+  } catch (err) {
+    return res.status(500).json({ error: err.message });
+  }
 });
 
 module.exports = router;

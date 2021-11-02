@@ -1,13 +1,20 @@
-const { schema } = require('./joiValidator');
+const { schema, registerSchema } = require('./joiValidator');
 const usersModels = require('../models/usersModels');
+const {
+  emailExists,
+} = require('../errorTexts');
 
 const bodyValidation = async (req, res, next) => {
   try {
     const { name, email, password } = req.body;
-    const value = await schema.validateAsync({ username: name, email, password });
-    const emailExists = await usersModels.getByMail(email);
-    if (!emailExists && value) return next();
-    return res.status(400).json({ error: 'Email already exists' });
+    const uName = await registerSchema.validateAsync({ username: name });
+    const value = await schema.validateAsync({ email, password });
+
+    const mailExists = await usersModels.getByMail(email);
+
+    if (!mailExists && value && uName) return next();
+
+    return res.status(400).json(emailExists);
   } catch (err) {
     return res.status(400).json({ error: err.message });
   }
