@@ -11,7 +11,6 @@ $ FrontEnd = [
 $ BackEnd = [
   NodeJS, 
   MongoDB, 
-  Eslint, 
   Joi, 
  ]
 
@@ -42,3 +41,15 @@ $ Npm run dev - Apenas no backend
 - [x] Inserir uma nova tarefa na lista;
 - [x] Remover uma tarefa da lista;
 - [x] Atualizar uma tarefa da lista;
+
+
+#### Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [MaterialUI](https://www.npmjs.com/package/@material-ui/core)
+- [Joi](https://joi.dev/api/?v=17.4.2)
+- [Eslint](https://eslint.org/)
