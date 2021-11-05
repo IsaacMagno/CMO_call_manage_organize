@@ -1,0 +1,51 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.905);
+}
+
+.heading {
+  font-size: 20px;
+  margin: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 650px;
+  min-height: 300px;
+  padding: 10px;
+}
+
+.task_container {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.task {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 20px;
+  justify-content:space-between;
+  display: flex;
+}
+
+.taskList {
+  width: 150px;
+  height: 10px;
+}
+
+.taskStatus {
+  width: 90px;
+  height: 25px;
+
+}
+
+/* .taskDate {
+} */
