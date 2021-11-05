@@ -31,7 +31,7 @@ $ npm start
 #### Para desenvolvimento:
 $ Npm run dev - Apenas no backend
 
-### O servidor inciará na porta:3001 - acesse <http://localhost:3001/>
+### O servidor inciará na porta:3000 - acesse <http://localhost:3000/>
 
 
 #### O programa atual na versão 1.0 possui as seguintes funcionalidades:
