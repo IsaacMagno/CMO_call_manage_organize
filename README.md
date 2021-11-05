@@ -11,7 +11,7 @@ $ FrontEnd = [
 $ BackEnd = [
   NodeJS, 
   MongoDB, 
-  Joi, 
+  Joi
  ]
 
 ### Como utilizar o projeto:
